@@ -1,0 +1,8 @@
+C:\Users\Allianz\Downloads\Antigravity\target\debug\deps\color_quant-ae1b0140d88f1865.d: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\math.rs
+
+C:\Users\Allianz\Downloads\Antigravity\target\debug\deps\libcolor_quant-ae1b0140d88f1865.rlib: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\math.rs
+
+C:\Users\Allianz\Downloads\Antigravity\target\debug\deps\libcolor_quant-ae1b0140d88f1865.rmeta: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\math.rs
+
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\lib.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\color_quant-1.1.0\src\math.rs:

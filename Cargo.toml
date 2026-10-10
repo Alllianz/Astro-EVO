@@ -1,0 +1,28 @@
+[package]
+name = "astro_evo"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "astro_evo"
+path = "src/lib.rs"
+
+[[bin]]
+name = "astro_evo"
+path = "src/main.rs"
+
+[dependencies]
+chrono = { version = "0.4.43", features = ["serde"] }
+mimalloc = "0.1.43"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls-webpki-roots"] }
+rusqlite = { version = "0.38.0", features = ["bundled"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+tokio = { version = "1.49.0", features = ["rt-multi-thread", "macros", "time"] }
+hmac = "0.12.1"
+sha2 = "0.10.8"
+hex = "0.4.3"
+ndarray = { version = "0.16.1", features = ["serde"] }
+rand = "0.9"
+rayon = "1.10.0"
+plotters = "0.3"

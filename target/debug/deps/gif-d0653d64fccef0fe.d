@@ -1,0 +1,11 @@
+C:\Users\Allianz\Downloads\Antigravity\target\debug\deps\gif-d0653d64fccef0fe.d: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\traits.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\common.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\mod.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\decoder.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\encoder.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\../README.md
+
+C:\Users\Allianz\Downloads\Antigravity\target\debug\deps\libgif-d0653d64fccef0fe.rmeta: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\traits.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\common.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\mod.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\decoder.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\encoder.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\../README.md
+
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\lib.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\traits.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\common.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\mod.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\reader\decoder.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\encoder.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\gif-0.12.0\src\../README.md:
