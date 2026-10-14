@@ -2,9 +2,12 @@ pub mod block_evolution;
 pub mod config;
 pub mod dashboard;
 pub mod history;
+pub mod labeling;
 pub mod models;
 pub mod original_evolution;
 pub mod ranking;
+
+pub use labeling::{generate_triple_barrier_labels, TripleBarrierConfig};
 
 pub use block_evolution::{run_block_evolution_sweep, run_interactive_block_evolution, BlockEvolutionConfig};
 pub use config::IntelligenceSweepConfig;

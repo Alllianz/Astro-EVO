@@ -35,7 +35,7 @@ pub fn get_model_spec_for_timeframe(timeframe: &str) -> ModelArchitectureSpec {
     let tf_upper = timeframe.to_uppercase();
     match tf_upper.as_str() {
         "1D" | "1d" => ModelArchitectureSpec::new(
-            34, // Features base 1D (33 técnicas + 1 posición de cuenta)
+            32, // Features base 1D (31 técnicas + 1 posición de cuenta; f28 y f29 eliminadas)
             8,  // Conv1: 8 filtros (detecta giros de tendencia y patrones de varios días)
             16, // Conv2: 16 filtros (combina giros con la tendencia general del mes)
             16, // Global Average Pooling resume a 16 -> Dense dimensión (16 -> 3)

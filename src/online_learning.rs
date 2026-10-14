@@ -164,6 +164,16 @@ pub fn generate_astro_labels(klines: &[Kline], horizon: usize) -> Vec<usize> {
     labels
 }
 
+pub fn generate_astro_labels_for_tf(klines: &[Kline], tf: &str, horizon: usize) -> Vec<usize> {
+    if tf.eq_ignore_ascii_case("1D") {
+        // En 1D se utiliza el Método de la Triple Barrera para evitar liquidaciones tempranas y sesgos de orden temporal
+        let cfg = crate::intelligence::TripleBarrierConfig::for_timeframe("1D", horizon, 10.0);
+        crate::intelligence::generate_triple_barrier_labels(klines, &cfg)
+    } else {
+        generate_astro_labels(klines, horizon)
+    }
+}
+
 pub fn prepare_dataset_with_horizon(conn_candles: &Connection, tf: &str, horizon: usize) -> Result<AstroDataset, Box<dyn Error>> {
     println!("Cargando velas para Astro Dataset en {} (Horizonte H={})...", tf, horizon);
     let klines = get_all_klines(conn_candles, tf)?;
@@ -180,7 +190,7 @@ pub fn prepare_dataset_with_horizon(conn_candles: &Connection, tf: &str, horizon
     let atr_50 = precalculate_atr(&klines, 50);
 
     println!("Etiquetando dataset Astro ({} velas, H={})...", klines.len(), horizon);
-    let labels = generate_astro_labels(&klines, horizon);
+    let labels = generate_astro_labels_for_tf(&klines, tf, horizon);
 
     println!("Precalculando matriz de features de alta velocidad para {} ({} velas)...", tf, klines.len());
     let raw_features = precalculate_dataset_raw_features_for_tf(
@@ -218,7 +228,7 @@ impl AstroDataset {
         if self.horizon == new_horizon {
             return self.clone();
         }
-        let labels = generate_astro_labels(&self.klines, new_horizon);
+        let labels = generate_astro_labels_for_tf(&self.klines, &self.tf, new_horizon);
         Self {
             tf: self.tf.clone(),
             horizon: new_horizon,

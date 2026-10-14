@@ -6,7 +6,8 @@ use chrono::{Datelike, TimeZone, Timelike, Utc};
 ///
 /// - Para **1H** (y sub-horarias): Incluye la feature intradiaria explícita de `Hora del Día` (0..1)
 ///   además de las 33 features estándar (Total: 34 raw features).
-/// - Para **4H** y **1D**: Incluye el conjunto estándar de 33 raw features.
+/// - Para **4H**: Incluye el conjunto estándar de 33 raw features.
+/// - Para **1D**: Excluye f28 y f29 (invariantes a 00:00 UTC) (Total: 31 raw features).
 #[inline(always)]
 pub fn compute_single_candle_features_by_tf(
     klines: &[Kline],
@@ -177,17 +178,28 @@ pub fn compute_single_candle_features_by_tf(
     }
     let f33 = frac_diff;
 
+    let tf_upper = tf.to_uppercase();
+    let is_daily = tf_upper == "1D";
+
     let mut result = Vec::with_capacity(raw_dim);
     result.extend_from_slice(&[
         f1 as f32, f2 as f32, f3 as f32, f4 as f32, f5 as f32, f6 as f32, f7 as f32, f8 as f32,
         f9 as f32, f10 as f32, f11 as f32, f12 as f32, f13 as f32, f14 as f32, f15 as f32,
         f16 as f32, f17 as f32, f18 as f32, f19 as f32, f20 as f32, f21 as f32, f22 as f32,
-        f23 as f32, f24 as f32, f25 as f32, f26 as f32, f27 as f32, f28 as f32, f29 as f32,
+        f23 as f32, f24 as f32, f25 as f32, f26 as f32, f27 as f32,
+    ]);
+
+    // f28 (hour_sin) y f29 (hour_cos) se omiten en 1D porque las velas diarias son constantes a las 00:00 UTC
+    if !is_daily {
+        result.push(f28 as f32);
+        result.push(f29 as f32);
+    }
+
+    result.extend_from_slice(&[
         f30 as f32, f31 as f32, f32 as f32, f33 as f32,
     ]);
 
     // Feature explícita de Hora del Día para modelos 1H e intradiarios
-    let tf_upper = tf.to_uppercase();
     if tf_upper == "1H" || tf_upper == "15M" || tf_upper == "5M" || tf_upper == "1M" {
         let hour_of_day_normalized = (hour / 23.0) as f32;
         result.push(hour_of_day_normalized);

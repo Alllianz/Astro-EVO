@@ -78,11 +78,11 @@ pub fn compute_multicriteria_rankings<T: Clone>(
         let r_r2 = *rank_r2_map.get(&key).unwrap_or(&999);
         let r_smooth = *rank_smooth_map.get(&key).unwrap_or(&999);
 
-        // Pesos: Slope (1.0), Cap/DD (1.0), Linealidad R² (2.0), Suavidad (1.0) -> Total divisor = 5.0
+        // Pesos equilibrados: Slope (1.0), Cap/DD (1.0), Linealidad R² (1.0), Suavidad (1.0) -> Total divisor = 4.0
         let weighted_rank = (1.0 * (r_slope as f64)
             + 1.0 * (r_cap_dd as f64)
-            + 2.0 * (r_r2 as f64)
-            + 1.0 * (r_smooth as f64)) / 5.0;
+            + 1.0 * (r_r2 as f64)
+            + 1.0 * (r_smooth as f64)) / 4.0;
 
         results_map.insert(key.clone(), CandidateRankScore {
             candidate_id: key,
